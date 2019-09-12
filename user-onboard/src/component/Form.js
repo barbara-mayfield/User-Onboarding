@@ -34,7 +34,8 @@ const UserForm = ({ errors, touched, status }) => {
             <button type="submit">Submit</button>
             
             {users.map(user => (
-                <div>Name: {user.name}
+                <div className="user-display">
+                    Name: {user.name}<br />
                     e-mail: {user.email}
                 </div>
             ))}
@@ -60,4 +61,14 @@ export default withFormik({
         password: yup.string().min(5, 'Password Must Contain At Least 5 Characters').required(`Password is required`),
         tos: yup.boolean().oneOf([true], 'You must accept Terms of Service')
     }),
+
+    handleSubmit: (values, { setStatus }) => {
+         axios.post('https://reqres.in/api/users', values)
+         .then((res) => {
+           setStatus(res.data);
+         })
+         .catch((err) => {
+           console.log('Error');
+         })
+       }
 })(UserForm);
