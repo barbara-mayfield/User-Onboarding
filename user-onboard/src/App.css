@@ -16,7 +16,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
 }
 
 .App-link {
@@ -30,4 +30,51 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+form {
+  width: 25rem;
+  margin: 0 auto;
+  padding: 5rem;
+  border-radius: 1.6rem;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+input, textarea {
+  margin: 2px auto;
+}
+
+.error {
+  color: crimson;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  border-radius: 4px;
+  font-size: 0.6rem;
+  width: 38%;
+  margin: 0 auto;
+  padding: 0.2rem;
+}
+
+button {
+  border: 1px solid darkslategray;
+  border-radius: 1rem;
+  height: 3rem;
+  width: 7rem;
+  margin: 0 auto;
+  margin-top: 0.5rem;
+  background: slategray;
+}
+
+.terms {
+  font-size: 1rem;
+  margin: 0 auto;
+}
+
+.termcheck {
+  width: 1rem;
+  margin-right: 1rem;
 }
