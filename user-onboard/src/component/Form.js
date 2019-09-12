@@ -30,7 +30,7 @@ const UserForm = ({ errors, touched, status }) => {
             <span>Terms of Service</span>
             </label>
             {touched.tos && errors.tos && <p className="error">{errors.tos}</p>}
-            
+
             <button type="submit">Submit</button>
             
             {users.map(user => (
@@ -57,7 +57,7 @@ export default withFormik({
     validationSchema: yup.object().shape({
         name: yup.string().required('Name is required'),
         email: yup.string().email().required('Email is required'),
-        password: yup.string().required('Password is required'),
+        password: yup.string().min(5, 'Password Must Contain At Least 5 Characters').required(`Password is required`),
         tos: yup.boolean().oneOf([true], 'You must accept Terms of Service')
     }),
 })(UserForm);
