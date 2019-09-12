@@ -29,6 +29,7 @@ const UserForm = ({ errors, touched, status }) => {
             <Field type="checkbox" name="tos" className="termcheck" />
             <span>Terms of Service</span>
             </label>
+            {touched.tos && errors.tos && <p className="error">{errors.tos}</p>}
             
             <button type="submit">Submit</button>
             
@@ -55,7 +56,7 @@ export default withFormik({
 
     validationSchema: yup.object().shape({
         name: yup.string().required('Name is required'),
-        email: yup.string().required('Email is required'),
+        email: yup.string().email().required('Email is required'),
         password: yup.string().required('Password is required'),
         tos: yup.boolean().oneOf([true], 'You must accept Terms of Service')
     }),
