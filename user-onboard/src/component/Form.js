@@ -27,7 +27,7 @@ const UserForm = ({ errors, touched, status }) => {
             <Field type="password" name="password" placeholder="Password" className="form-field" />
             {touched.password && errors.password && <p className="error">{errors.password}</p>}
 
-            <Field component="select" name="role" className="form-field">
+            <Field component="select" name="role" className="form-field roleselect">
                 <option value="" disabled>Select Role:</option>
                 <option value="Front End Dev">Front End Dev</option>
                 <option value="Back End Dev">Back End Dev</option>

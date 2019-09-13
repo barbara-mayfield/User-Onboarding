@@ -98,3 +98,7 @@ h1 {
   width: 50%;
   margin: 0 auto;
 }
+
+.roleselect {
+  border-radius: 0.6rem;
+}
