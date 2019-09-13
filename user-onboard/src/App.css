@@ -9,7 +9,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #212227;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -33,11 +33,12 @@
 }
 
 form {
-  width: 25rem;
+  width: 40rem;
   margin: 0 auto;
   padding: 5rem;
+  padding-top: 2rem;
   border-radius: 1.6rem;
-  background-color: #fff;
+  background-color: #BDD4E7;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   text-align: left;
   display: flex;
@@ -45,33 +46,30 @@ form {
 }
 
 input, textarea {
-  margin: 2px auto;
+  border-radius: 0.6rem;
+}
+
+.form-field {
+  margin-bottom: 0.3rem;
 }
 
 .error {
   color: crimson;
-  background-color: #f8d7da;
+  background-color: #BDD4E7;
   border-color: #f5c6cb;
   border-radius: 4px;
-  font-size: 0.6rem;
-  width: 38%;
+  font-size: 1rem;
   margin: 0 auto;
+  margin-bottom: 0.5rem;
   padding: 0.2rem;
-}
-
-button {
-  border: 1px solid darkslategray;
-  border-radius: 1rem;
-  height: 3rem;
-  width: 7rem;
-  margin: 0 auto;
-  margin-top: 0.5rem;
-  background: slategray;
+  font-weight: bold;
 }
 
 .terms {
   font-size: 1rem;
   margin: 0 auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .termcheck {
@@ -86,4 +84,11 @@ button {
   margin: 2rem auto;
   padding: 0.5rem;
   text-align: center;
+  border: 1px solid black;
+  
+}
+
+h1 {
+  margin: 0 auto;
+  padding-bottom: 2rem;
 }

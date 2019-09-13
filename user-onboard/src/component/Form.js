@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { withFormik, Form, Field } from 'formik';
 import * as yup from 'yup';
 import axios from 'axios';
+import { Button } from 'reactstrap';
 
 const UserForm = ({ errors, touched, status }) => {
     console.log(status)
@@ -15,14 +16,15 @@ const UserForm = ({ errors, touched, status }) => {
 
     return (
         <Form>
-            <Field type="text" name="name" placeholder="Name" />
+        <h1>User Sign-Up</h1>
+            <Field type="text" name="name" placeholder="Name" className="form-field" />
             {touched.name && errors.name && <p className="error">{errors.name}</p>}
 
-            <Field type="text" name="email" placeholder="E-Mail" />
+            <Field type="text" name="email" placeholder="E-Mail" className="form-field" />
             {touched.email && errors.name && <p className="error">{errors.email}</p>}
 
 
-            <Field type="password" name="password" placeholder="Password" />
+            <Field type="password" name="password" placeholder="Password" className="form-field" />
             {touched.password && errors.password && <p className="error">{errors.password}</p>}
 
             <label className="terms">
@@ -31,7 +33,7 @@ const UserForm = ({ errors, touched, status }) => {
             </label>
             {touched.tos && errors.tos && <p className="error">{errors.tos}</p>}
 
-            <button type="submit">Submit</button>
+            <Button type="submit" color="secondary">Submit</Button>
             
             {users.map(user => (
                 <div className="user-display">
