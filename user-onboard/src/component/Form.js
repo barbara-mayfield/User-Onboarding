@@ -27,6 +27,15 @@ const UserForm = ({ errors, touched, status }) => {
             <Field type="password" name="password" placeholder="Password" className="form-field" />
             {touched.password && errors.password && <p className="error">{errors.password}</p>}
 
+            <Field component="select" name="role" className="form-field">
+                <option value="" disabled>Select Role:</option>
+                <option value="Front End Dev">Front End Dev</option>
+                <option value="Back End Dev">Back End Dev</option>
+                <option value="Disc Jockey">Disc Jockey</option>
+                <option value="Other">Other</option>
+            </Field>
+            {touched.role && errors.role && <p className="error">{errors.role}</p>}
+
             <label className="terms">
             <Field type="checkbox" name="tos" className="termcheck" />
             <span>Terms of Service</span>
@@ -39,7 +48,8 @@ const UserForm = ({ errors, touched, status }) => {
                 <div className="user-display">
                     <h2>User Info</h2>
                     Name: {user.name}<br />
-                    e-mail: {user.email}
+                    E-Mail: {user.email}<br />
+                    Role: {user.role}
                 </div>
             ))}
         </Form>
@@ -54,7 +64,9 @@ export default withFormik({
             name: values.name || '',
             email: values.email || '',
             password: values.password || '',
-            tos: values.tos || ''
+            tos: values.tos || '',
+            role: values.role || '',
+            otherrole: values.otherrole || ''
         }
     },
 
@@ -63,6 +75,7 @@ export default withFormik({
         email: yup.string().email().required('Email is required'),
         password: yup.string().min(5, 'Password Must Contain At Least 5 Characters').required(`Password is required`),
         tos: yup.boolean().oneOf([true], 'You must accept Terms of Service').required('You Must Accept Terms of Service'),
+        role: yup.string().required('You Must Select a Role')
     }),
 
     handleSubmit: (values, { setStatus }) => {
