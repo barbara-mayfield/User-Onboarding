@@ -37,6 +37,7 @@ const UserForm = ({ errors, touched, status }) => {
             
             {users.map(user => (
                 <div className="user-display">
+                    <h2>User Info</h2>
                     Name: {user.name}<br />
                     e-mail: {user.email}
                 </div>
@@ -61,7 +62,7 @@ export default withFormik({
         name: yup.string().required('Name is required'),
         email: yup.string().email().required('Email is required'),
         password: yup.string().min(5, 'Password Must Contain At Least 5 Characters').required(`Password is required`),
-        tos: yup.boolean().oneOf([true], 'You must accept Terms of Service')
+        tos: yup.boolean().oneOf([true], 'You must accept Terms of Service').required('You Must Accept Terms of Service'),
     }),
 
     handleSubmit: (values, { setStatus }) => {
